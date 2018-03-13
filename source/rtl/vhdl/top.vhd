@@ -260,7 +260,7 @@ begin
 	
 	process(pix_clock_o,reset_n_i)begin
 		if(reset_n_i='0') then
-			char_address<=conv_std_vector_logic(0,char_address'length);
+			char_address<=(others=>'0');
 		elsif (rising_edge(pix_clock_o)) then
 			char_address <= char_address + 1;
 			if (char_address = 4800) then
